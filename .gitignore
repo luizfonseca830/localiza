@@ -1,0 +1,5 @@
+*.idea
+*myVenv
+*pyc
+*media
+.env

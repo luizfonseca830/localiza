@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Bem Vindo {% endblock %}
+
+{% block main %}
+     {% if user.is_authenticated %}
+     <div class="row">
+        <div class="col-6">
+            <h1>Sejas Bem Vindo</h1>
+        </div>
+    </div>
+    {% else %}
+          <div class="row">
+        <div class="col-6">
+            <h3>Estás num sistema de gestão de locadora de automoveis</h3>
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

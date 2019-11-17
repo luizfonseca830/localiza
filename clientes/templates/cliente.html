@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Cliente {% endblock %}
+
+{% block main %}
+
+    <h3>Listagem de Clientes</h3>
+    <div class="row">
+        <ul class="list-group">
+            {% for cliente in clientes %}
+                <li class="list-group-item">
+                    <a href="{% url 'cliente_update' cliente.id %}"> {{ cliente.nome }} {{ cliente.sobrenome }}</a>
+                    <a href="{% url 'cliente_delete' cliente.id %}" title="Excluir">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </br>
+    <div class="row1">
+        <a type="button" class="btn btn-primary" href="{% url 'cliente_new' %}"> <span
+                class="glyphicon glyphicon-plus"></span>Cadastrar</a>
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
