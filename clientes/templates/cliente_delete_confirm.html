@@ -4,7 +4,7 @@
 
 {% block main %}
     <h1>Estás certo em remover ?</h1>
-    <h3> Cliente: {{ cliente.first_name }} {{ cliente.last_name }}</h3>
+    <h3> Cliente: {{ cliente.nome }} {{ cliente.sobrenome }}</h3>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Sim</button>
