@@ -7,7 +7,7 @@ from .forms import AutomovelForm
 @login_required()
 def automoveis_list(request):
     automoveis = Automovel.objects.all()
-    return render(request, 'automovel.html', {'autmoveis': automoveis})
+    return render(request, 'automovel.html', {'automoveis': automoveis})
 
 
 @login_required()
