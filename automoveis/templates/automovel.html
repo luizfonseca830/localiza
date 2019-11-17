@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Automóvel {% endblock %}
+
+{% block main %}
+
+    <h3>Listagem de Autmóveis</h3>
+    <div class="row">
+        <ul class="list-group">
+            {% for automovel in automoveis %}
+                <li class="list-group-item">
+                    <a href="{% url 'automovel_update' automovel.id %}"> {{ automovel.placa }} {{ automovel.modelo }}</a>
+                    <a href="{% url 'automovel_delete' automovel.id %}" title="Excluir">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </br>
+    <div class="row1">
+        <a type="button" class="btn btn-primary" href="{% url 'automovel_new' %}"> <span
+                class="glyphicon glyphicon-plus"></span>Cadastrar</a>
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

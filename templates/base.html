@@ -25,9 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'cliente_list' %}">Lista de Clientes</a>
                 </li>
-                {% comment %}<li class="nav-item">
-                    <a class="nav-link" href="{% url '' %}">Lista de Automóveis</a>
-                </li>{% endcomment %}
+              <li class="nav-item">
+                    <a class="nav-link" href="{% url 'automovel_list' %}">Lista de Automóveis</a>
+                </li>
             </ul>
           {% if user.is_authenticated %}
                <a id="logout" type="button" href="{% url 'logout' %}" class="btn btn-danger btn-sm"><span
