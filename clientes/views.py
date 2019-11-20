@@ -6,7 +6,7 @@ from .forms import ClienteForm
 
 @login_required()
 def clientes_list(request):
-    clientes = Cliente.objects.all()
+    clientes = Cliente.objects.order_by('nome')
     return render(request, 'cliente.html', {'clientes': clientes})
 
 
