@@ -12,7 +12,6 @@ def locacoes_list(request):
 
 @login_required()
 def locacoes_new(request):
-    # automovel = Automovel.objects.get(id=id)
     form = LocacaoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         locacao = form.save()
@@ -39,5 +38,8 @@ def locacoes_delete(request, id):
 
     if request.method == 'POST':
         locacao.delete()
+        automovel = locacao.automovel
+        automovel.alugado = False
+        automovel.save()
         return redirect('locacoes_list')
     return render(request, 'locacao_delete_confirm.html', {'locacao': locacao})

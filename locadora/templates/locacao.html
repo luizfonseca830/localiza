@@ -5,11 +5,12 @@
 {% block main %}
 
     <h3>Listagem de Locação</h3>
-    <div class="row" title="Nome">
+    <div class="row">
         <ul class="list-group">
             {% for locacao in locacoes %}
                 <li class="list-group-item">
-                    <a href="{% url 'locacoes_update' locacao.id %}"> {{ locacao.cliente.nome }} {{ locacao.automovel.placa }} {{ locacao.valor }}</a>
+                    <a href="{% url 'locacoes_update' locacao.id %}">
+                        Cliente: {{ locacao.cliente.nome }} Placa: {{ locacao.automovel.placa }} Valor Aluguel :{{ locacao.valor }} Inicio da Locação: {{ locacao.data_inicio }} Final da Locação: {{ locacao.data_final }}</a>
                     <a href="{% url 'locacoes_delete' locacao.id %}" title="Excluir">
                         <span class="glyphicon glyphicon-trash"></span>
                     </a>
