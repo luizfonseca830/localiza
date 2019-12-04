@@ -4,8 +4,21 @@
 
 {% block main %}
 
+    <div class="row">
+        <div class="col-12">
+            <form class="form-inline">
+                <div class="form-group mb-2"></div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="pesquisa" name="pesquisa" placeholder="Digite a placa do auto">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+            </form>
+
+        </div>
+    </div>
+
     <h3>Listagem de Autmóveis</h3>
-    <div class="row" title="Nome">
+    <div class="row">
         <ul class="list-group">
             {% for automovel in automoveis %}
                 <li class="list-group-item">

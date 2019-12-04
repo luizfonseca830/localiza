@@ -6,7 +6,12 @@ from .forms import AutomovelForm
 
 @login_required()
 def automoveis_list(request):
-    automoveis = Automovel.objects.all()
+    termo_busca = request.GET.get('pesquisa', None)
+    if termo_busca:
+        automoveis =Automovel.objects.all()
+        automoveis = Automovel.objects.filter(placa=termo_busca)
+    else:
+        automoveis = Automovel.objects.all()
     return render(request, 'automovel.html', {'automoveis': automoveis})
 
 
