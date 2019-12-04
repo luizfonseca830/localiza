@@ -12,9 +12,9 @@ def locacoes_list(request):
 
 
 @login_required()
-def locacoes_new(request, id):
-    automovel = Automovel.objects.get(id=id)
-    form = LocacaoForm(request.POST or None, request.FILES or None, instance=automovel)
+def locacoes_new(request):
+    # automovel = Automovel.objects.get(id=id)
+    form = LocacaoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         locacao = form.save()
         automovel = locacao.automovel
