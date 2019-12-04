@@ -1,0 +1,1 @@
+web: gunicorn localiza.wsgi --log-file -
