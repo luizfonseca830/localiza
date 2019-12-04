@@ -31,6 +31,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'locacoes_list' %}">Locações</a>
                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'automoveis_locados' %}">Automóveis Locados</a>
+                </li>
+
             </ul>
             {% if user.is_authenticated %}
                 <a id="logout" type="button" href="{% url 'logout' %}" class="btn btn-danger btn-sm"><span

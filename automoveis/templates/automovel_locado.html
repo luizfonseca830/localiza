@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Automóveis Locados{% endblock %}
+
+{% block main %}
+
+    <h3>Listagem de Autmóveis Locados</h3>
+    <div class="row">
+        <ul class="list-group">
+            {% for automovel in automoveislocados %}
+                <li class="list-group-item">
+                    {{ automovel.marca }} {{ automovel.modelo }} {{ automovel.placa }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

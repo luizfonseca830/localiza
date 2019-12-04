@@ -11,6 +11,12 @@ def automoveis_list(request):
 
 
 @login_required()
+def automoveis_locados(request):
+    automoveislocados = Automovel.objects.filter(alugado=True)
+    return render(request, 'automovel_locado.html', {'automoveislocados': automoveislocados})
+
+
+@login_required()
 def automoveis_new(request):
     form = AutomovelForm(request.POST or None, request.FILES or None)
 
