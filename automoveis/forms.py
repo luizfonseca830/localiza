@@ -6,4 +6,4 @@ from automoveis.models import Automovel
 class AutomovelForm(ModelForm):
     class Meta:
         model = Automovel
-        fields = ['marca', 'modelo', 'placa', 'foto']
+        fields = ['marca', 'modelo', 'placa', 'alugado', 'foto']

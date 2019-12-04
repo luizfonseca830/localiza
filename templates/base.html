@@ -20,20 +20,23 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                      <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cliente_list' %}">Lista de Clientes</a>
+                    <a class="nav-link" href="{% url 'cliente_list' %}">Clientes</a>
                 </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="{% url 'automovel_list' %}">Lista de Automóveis</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'automovel_list' %}">Automóveis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'locacoes_list' %}">Locações</a>
                 </li>
             </ul>
-          {% if user.is_authenticated %}
-               <a id="logout" type="button" href="{% url 'logout' %}" class="btn btn-danger btn-sm"><span
-            class="glyphicon glyphicon-off"></span>Logout</a>
+            {% if user.is_authenticated %}
+                <a id="logout" type="button" href="{% url 'logout' %}" class="btn btn-danger btn-sm"><span
+                        class="glyphicon glyphicon-off"></span>Logout</a>
             {% else %}
-                <a  id="login" type="button" class="btn btn-info" href="{% url 'login' %}">Login In</a>
+                <a id="login" type="button" class="btn btn-info" href="{% url 'login' %}">Login In</a>
             {% endif %}
         </div>
     </nav>
@@ -49,8 +52,8 @@
 </div>
 </body>
 <footer class="my-5 pt-5 text-muted text-center text-small">
-  <div class="container">
-    <span class="text-muted">Sistema de Gestão de Locadoras V1.0</span>
-  </div>
+    <div class="container">
+        <span class="text-muted">Sistema de Gestão de Locadoras V1.0</span>
+    </div>
 </footer>
 </html>

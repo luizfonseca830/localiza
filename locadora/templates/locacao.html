@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Locação {% endblock %}
+
+{% block main %}
+
+    <h3>Listagem de Locação</h3>
+    <div class="row" title="Nome">
+        <ul class="list-group">
+            {% for locacao in locacoes %}
+                <li class="list-group-item">
+                    <a href="{% url 'locacoes_update' locacao.id %}"> {{ locacao.cliente.nome }} {{ locacao.automovel.placa }} {{ locacao.valor }}</a>
+                    <a href="{% url 'locacoes_delete' locacao.id %}" title="Excluir">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </br>
+    <div class="row1">
+        <a type="button" class="btn btn-primary" href="{% url 'locacoes_new' %}"> <span
+                class="glyphicon glyphicon-plus"></span>Cadastrar</a>
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

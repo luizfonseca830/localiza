@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Cadastro da Locação {% endblock %}
+
+{% block main %}
+    <h3> Cadastro da Locação </h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary"><span
+            class="glyphicon glyphicon-floppy-disk"></span>Salvar</button>
+        <a class="btn btn-danger" href="{% url 'locacoes_list' %}">Voltar</a>
+    </form>
+{% endblock %}
+{% block footer %}
+{% endblock %}

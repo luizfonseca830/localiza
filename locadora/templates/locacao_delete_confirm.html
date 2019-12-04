@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete de Cliente {% endblock %}
+
+{% block main %}
+    <h1>Estás certo em remover ?</h1>
+    <h3> A Locação do: {{ locacao.cliente.nome }} {{ locacao.cliente.sobrenome }}
+        {{ locacao.automovel.marca }} {{ locacao.automovel.placa }}</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sim</button>
+        <a class="btn btn-primary" href="{% url 'cliente_list' %}">Não</a>
+    </form>
+{% endblock %}
+{% block footer %}
+{% endblock %}

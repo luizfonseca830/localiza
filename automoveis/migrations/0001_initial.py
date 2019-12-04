@@ -12,13 +12,14 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Cliente',
+            name='Automovel',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=30)),
-                ('sobrenome', models.CharField(max_length=30)),
-                ('idade', models.IntegerField(blank=True, null=True)),
-                ('foto', models.ImageField(blank=True, null=True, upload_to='clientes_fotos')),
+                ('marca', models.CharField(max_length=30)),
+                ('modelo', models.CharField(max_length=30)),
+                ('placa', models.CharField(max_length=30)),
+                ('foto', models.ImageField(blank=True, null=True, upload_to='automoveis_fotos')),
+                ('alugado', models.BooleanField(default=False)),
             ],
         ),
     ]
