@@ -10,6 +10,8 @@ def automoveis_list(request):
     if termo_busca:
         automoveis =Automovel.objects.all()
         automoveis = Automovel.objects.filter(placa=termo_busca)
+        automoveis = Automovel.objects.filter(modelo=termo_busca)
+        automoveis = Automovel.objects.filter(marca=termo_busca)
     else:
         automoveis = Automovel.objects.all()
     return render(request, 'automovel.html', {'automoveis': automoveis})
