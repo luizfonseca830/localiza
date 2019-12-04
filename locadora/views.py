@@ -12,11 +12,14 @@ def locacoes_list(request):
 
 
 @login_required()
-def locacoes_new(request):
-    form = LocacaoForm(request.POST or None, request.FILES or None)
+def locacoes_new(request, id):
+    automovel = Automovel.objects.get(id=id)
+    form = LocacaoForm(request.POST or None, request.FILES or None, instance=automovel)
     if form.is_valid():
-
-        form.save()
+        locacao = form.save()
+        automovel = locacao.automovel
+        automovel.alugado = True
+        automovel.save()
         return redirect('locacoes_list')
     return render(request, 'locacao_form.html', {'form': form})
 
@@ -25,7 +28,6 @@ def locacoes_new(request):
 def locacoes_update(request, id):
     locacoes = get_object_or_404(Locacao, pk=id)
     form = LocacaoForm(request.POST or None, request.FILES or None, instance=locacoes)
-
     if form.is_valid():
         form.save()
         return redirect('locacoes_list')
